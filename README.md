@@ -19,5 +19,6 @@ Stack:
 
 ## TODO
 
-- get CRUD working 
+- Finish ticket schema + create
 - fill out schemas (user/project/ticket)
+- finish CRUD 
