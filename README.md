@@ -9,6 +9,8 @@ Stack:
 - ReactJS
 - NodeJS
 
+[Guide Used](https://dev.to/andrewbaisden/creating-mern-stack-applications-2020-4a44)
+
 ## Goal
 
 - Create a full fledged web app to create and monitor bugs for specific projects 

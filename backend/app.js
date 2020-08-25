@@ -19,11 +19,6 @@ app.get('/', (req, res) => res.send('Home Route'));
 
 const port = process.env.PORT || 8080;
 
-// change this URI using: uri on atlas
-
-
-
-
 mongoose
     .connect(process.env.ATLAS_URI, {
         useCreateIndex: true,
@@ -32,10 +27,6 @@ mongoose
       useFindAndModify: false,
     })
     .then(() => {
-        const projectsRouter = require('./routes/projects');
-        const usersRouter = require('./routes/users');
-        app.use('/projects', projectsRouter);
-        app.use('/users', usersRouter);
         app.listen(port, () => console.log(`Server and Database running on ${port}, http://localhost:${port}`));
     })
     .catch((err) => {
