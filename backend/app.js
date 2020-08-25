@@ -15,22 +15,27 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/static', express.static(path.join(`${__dirname}/public`)));
 
-app.get('/', (req, res) => res.send('TRINA'));
+app.get('/', (req, res) => res.send('Home Route'));
 
 const port = process.env.PORT || 8080;
 
-// change this URI using: mongodb+srv://DBUSER:<password>@cluster0.hh9ki.mongodb.net/<dbname>?retryWrites=true&w=majority
-// change DBUSER if needed <password> and and <dbname>
-const uri = "mongodb+srv://DBUSER:hmN1v8EFtCJGWPkw@cluster0.hh9ki.mongodb.net/sample_airbnb?retryWrites=true&w=majority";
+// change this URI using: uri on atlas
+
+
+
 
 mongoose
-    .connect(uri, {
+    .connect(process.env.ATLAS_URI, {
         useCreateIndex: true,
         useUnifiedTopology: true,
         useNewUrlParser: true,
       useFindAndModify: false,
     })
     .then(() => {
+        const projectsRouter = require('./routes/projects');
+        const usersRouter = require('./routes/users');
+        app.use('/projects', projectsRouter);
+        app.use('/users', usersRouter);
         app.listen(port, () => console.log(`Server and Database running on ${port}, http://localhost:${port}`));
     })
     .catch((err) => {
