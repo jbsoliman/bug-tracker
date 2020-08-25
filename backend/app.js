@@ -15,7 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/static', express.static(path.join(`${__dirname}/public`)));
 
-app.get('/', (req, res) => res.send('Home Route'));
+const adminRoute = require('./routes/admin');
+
+app.use('/', adminRoute);
 
 const port = process.env.PORT || 8080;
 

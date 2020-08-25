@@ -15,3 +15,9 @@ Stack:
 
 - Create a full fledged web app to create and monitor bugs for specific projects 
 - User Authentication/Authorization
+
+
+## TODO
+
+- get CRUD working 
+- fill out schemas (user/project/ticket)
