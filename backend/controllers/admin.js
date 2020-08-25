@@ -1,35 +1,51 @@
-const Users = require('../models/user.model')
-const Projects = require('../models/project.model')
+const User = require('../models/user.model')
+const Project = require('../models/project.model')
 
 exports.getIndex = (req, res) => {
     res.status(200).render('index');
 };
 
+
 exports.getAddUser = (req, res) => {
     res.status(200).render('edit-user');
 };
 
-exports.postUser = async (req, res) => {
-    const username  = req.body.username;
+exports.getAddProject = (req, res) => {
+    res.status(200).render('edit-project');
+};
 
-    const user = new Users(username);
-    user.save()
-        .then(() => res.json('User added!'))
-        .catch(err => res.status(400).json('Error: ' + err));
+
+exports.postUser = (req, res) => {
+    if (!req.body) {
+        return res.status(400).json ({
+            status: 'error',
+            error: 'req body cannot be empty',
+        })
+    }
+    
+    const username  = req.body;
+
+    const user = new User(username);
+    user.save();
 
     console.log('User Added to the database');
     res.status(201).redirect('/');
 };
 
 exports.postProject = (req, res) => {
-    const { username: username, description: description, duration: duration, date: date } = req.body;
+    if (!req.body) {
+        return res.status(400).json ({
+            status: 'error',
+            error: 'req body cannot be empty',
+        })
+    }
+    const { username: username, description: description, duration: duration } = req.body;
 
-    const user = new Users(username);
+    
+    const user = new Project({ username: username, description: description, duration: duration});
     user.save()
-    .then(() => res.json('Project added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
 
 
-    console.log('User Added to the database');
+    console.log('Project Added to the database');
     res.status(201).redirect('/');
 };
