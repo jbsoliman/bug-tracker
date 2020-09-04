@@ -11,6 +11,11 @@ Stack:
 
 [Guide Used](https://dev.to/andrewbaisden/creating-mern-stack-applications-2020-4a44)
 
+
+## Steps to Run (develop)
+- <code>cd backend</code>
+- <code>npm run dev</code>
+
 ## Goal
 
 - Create a full fledged web app to create and monitor bugs for specific projects 

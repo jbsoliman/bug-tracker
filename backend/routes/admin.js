@@ -13,5 +13,11 @@ router.get('/add-project', adminController.getAddProject);
 
 router.post('/add-project', adminController.postProject);
 
+router.get('/add-ticket', adminController.getAddTicket);
+
+router.post('/add-ticket', adminController.postTicket);
+
+
+
 
 module.exports = router;
