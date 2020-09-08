@@ -17,6 +17,12 @@ router.get('/add-ticket', adminController.getAddTicket);
 
 router.post('/add-ticket', adminController.postTicket);
 
+router.get('/add-users', adminController.getUsers)
+
+router.get('/add-project', adminController.getProjects)
+
+router.get('/add-ticket', adminController.getTickets)
+
 
 
 

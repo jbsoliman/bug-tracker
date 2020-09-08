@@ -14,7 +14,7 @@ Stack:
 
 ## Steps to Run (develop)
 - <code>cd backend</code>
-- <code>npm run dev</code>
+- <code>npm run servers</code>
 
 ## Goal
 

@@ -2,13 +2,25 @@ const User = require('../models/user.model')
 const Project = require('../models/project.model')
 const Ticket = require('../models/ticket.model')
 
-exports.getIndex = (req, res) => {
-    res.status(200).render('index');
+exports.getIndex = async(req, res) => {
+    const user = await User.find((data) => data);
+    try {
+        res.status(200).render('index', {user: user});
+    } catch (error) {
+        console.log(error);
+    }
+    
 };
 
 
-exports.getAddUser = (req, res) => {
-    res.status(200).render('add-user');
+exports.getAddUser = async(req, res) => {
+    const user = await User.find((data) => data);
+    try {
+        console.log(user);
+        res.status(200).render('add-user', {user: user});
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 exports.getAddProject = (req, res) => {
@@ -18,6 +30,36 @@ exports.getAddProject = (req, res) => {
 exports.getAddTicket = (req, res) => {
     res.status(200).render('add-ticket');
 };
+
+exports.getUsers = async(req,res) => {
+    const user = await User.find((data) => data);
+    try {
+        console.log(user);
+        res.status(200).render('user', {user: user});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+exports.getProjects = async(req,res) => {
+    const project = await Project.find((data) => data);
+    try {
+        console.log(project);
+        res.status(200).render('project', {project: project});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+exports.getTickets = async(req,res) => {
+    const ticket = await Ticket.find((data) => data);
+    try {
+        console.log(ticket);
+        res.status(200).render('ticket', {ticket: ticket});
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 exports.postUser = (req, res) => {
@@ -30,7 +72,7 @@ exports.postUser = (req, res) => {
     
     const {username:username, email:email, role:role }  = req.body;
 
-    const user = new User(username);
+    const user = new User({username, email:email, role:role});
     user.save();
 
     console.log('User Added to the database');
