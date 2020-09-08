@@ -10,6 +10,7 @@ Stack:
 - NodeJS
 
 [Guide Used](https://dev.to/andrewbaisden/creating-mern-stack-applications-2020-4a44)
+[Secondary Guide used (exercise tracker)](https://medium.com/@beaucarnes/learn-the-mern-stack-by-building-an-exercise-tracker-mern-tutorial-59c13c1237a1)
 
 
 ## Steps to Run (develop)
@@ -24,6 +25,7 @@ Stack:
 
 ## TODO
 
-- Finish ticket schema + create
-- fill out schemas (user/project/ticket)
+- possibly change to exercise tracker (only create/keep exercise schema)
 - finish CRUD 
+- connect backend to frontend
+- create user authentication/authorization
