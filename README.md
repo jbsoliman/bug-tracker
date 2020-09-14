@@ -25,7 +25,6 @@ Stack:
 
 ## TODO
 
-- possibly change to exercise tracker (only create/keep exercise schema)
 - finish CRUD 
 - connect backend to frontend
 - create user authentication/authorization

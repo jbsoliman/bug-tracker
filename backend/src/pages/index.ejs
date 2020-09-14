@@ -11,6 +11,15 @@
         <button onclick="window.location.href='/add-project'">Move to Add Project Page</button>
         <button onclick="window.location.href='/add-ticket'">Move to Add Ticket Page</button>
 
+        <main>
+            <% ticket.forEach(data => { %>
+                <ul>
+                    <h1><a href="/<%= data.id %>"><%= data.projectname %></a></h1>
+                    <li><p><%= data.description %></p></li>
+                    <li><p><%= data.priority %></p></li>
+                </ul>
+            <% }) %>
+        </main>
     </body>
     
 </html>

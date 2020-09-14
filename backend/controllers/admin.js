@@ -3,9 +3,10 @@ const Project = require('../models/project.model')
 const Ticket = require('../models/ticket.model')
 
 exports.getIndex = async(req, res) => {
-    const user = await User.find((data) => data);
+    const ticket = await Ticket.find((data) => data);
     try {
-        res.status(200).render('index', {user: user});
+        res.status(200).render('index', {ticket: ticket});
+        console.log(ticket);
     } catch (error) {
         console.log(error);
     }
@@ -52,10 +53,12 @@ exports.getProjects = async(req,res) => {
 }
 
 exports.getTickets = async(req,res) => {
+    const ticketId = req.params.ticketId;
+
     const ticket = await Ticket.find((data) => data);
     try {
         console.log(ticket);
-        res.status(200).render('ticket', {ticket: ticket});
+        res.status(200).render(ticketId, {ticket: ticket});
     } catch (error) {
         console.log(error);
     }
@@ -114,4 +117,18 @@ exports.postTicket = (req, res) => {
 
     console.log('Ticket Added to the database');
     res.status(201).redirect('/');
+};
+
+exports.postDeleteTicket = async (req, res) => {
+    const ticketId = req.body.ticketId;
+
+    const ticket = await Ticket.findByIdAndRemove(ticketId, (data) => data);
+
+    try {
+        console.log(ticket);
+        console.log('Item Deleted');
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+    }
 };

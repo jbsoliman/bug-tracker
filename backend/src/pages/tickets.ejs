@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ticket</title>
+    </head>
+    <body>
+        <h1>ticket</h1>
+
+        <main>
+            <h1><%= ticket.projectname %></h1>
+            <p><%= ticket.description %></p>
+            <p><%= ticket.priority %> </p>
+
+            <div>
+                <form method="POST" action="/delete">
+                    <div>
+                        <input type="hidden" value="<%= ticket.id %>" name="ticketId" />
+                        <button>Delete</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

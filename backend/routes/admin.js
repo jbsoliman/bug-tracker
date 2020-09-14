@@ -21,7 +21,11 @@ router.get('/add-users', adminController.getUsers)
 
 router.get('/add-project', adminController.getProjects)
 
-router.get('/add-ticket', adminController.getTickets)
+router.get('/:ticketId', adminController.getTickets);
+
+router.post('/delete-ticket', adminController.postDeleteTicket);
+
+
 
 
 
