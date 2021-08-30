@@ -6,8 +6,11 @@ This projects uses the Model-View-Controller (MVC) architecture to log and view 
 
 Models:
 - Project/User/Ticket models in Backend (Mongoose/Node.js)
+
+
 Views:
 - React Components (index, add-project/ticket/user forms)
+
 Controller:
 - Express (HTTP Requests (GET/POST)) in controller\admin.js
 - Routed through in routes\admin.js
