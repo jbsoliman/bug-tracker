@@ -1,5 +1,8 @@
 # bug-tracker
 
+Hello From 1Password!
+
+
 ** Work in progress **
 
 This projects uses the Model-View-Controller (MVC) architecture to log and view users.
