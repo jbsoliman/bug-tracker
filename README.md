@@ -1,7 +1,6 @@
 # bug-tracker
 
-Hello From 1Password!
-
+Hello from RSA!
 
 ** Work in progress **
 
