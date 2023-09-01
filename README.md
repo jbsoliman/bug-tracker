@@ -1,6 +1,6 @@
 # bug-tracker
 
-Hello From 1Password!
+Happy Friday!
 
 
 ** Work in progress **
